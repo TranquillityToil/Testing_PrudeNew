@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cities>
+  <city>
+    <identifier>2643741</identifier>
+    <name>City of London</name>
+  </city>
+  <city>
+    <identifier>2988507</identifier>
+    <name>Paris</name>
+  </city>
+  <city>
+    <identifier>2964574</identifier>
+    <name>Dublin</name>
+  </city>
+  <city>
+    <identifier>4229546</identifier>
+    <name>Washington</name>
+  </city>
+  <city>
+    <identifier>5128581</identifier>
+    <name>New York</name>
+  </city>
+  <city>
+    <identifier>1273294</identifier>
+    <name>Delhi</name>
+  </city>
+  <city>
+    <identifier>1275339</identifier>
+    <name>Mumbai</name>
+  </city>
+  <city>
+    <identifier>6539761</identifier>
+    <name>Rome</name>
+  </city>
+  <city>
+    <identifier>2950159</identifier>
+    <name>Berlin</name>
+  </city>
+  <city>
+    <identifier>292223</identifier>
+    <name>Dubai</name>
+  </city>
+</cities>
