@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Linq;
 using Prudential.WeatherApi.Models;
 using Prudential.WeatherApi.Plugins;
 using Prudential.WeatherApi.Utility;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -33,13 +34,21 @@ namespace Prudential.WeatherApi.Controllers
 
             //var details = JObject.Parse(xmlInputData);
 
-
+            
             dynamic details = Newtonsoft.Json.JsonConvert.DeserializeObject(xmlInputData);
             int c = Convert.ToInt32(details.cnt);
+            dynamic datalist = details.list;
             for (var i = 0; i < c; i++)
             {
-                dynamic item = details[i];
-                string cityIfo = "Name: {0}, Age: {1}"+ (string)item.id+ (string)item.name;
+                var item = datalist[i];
+
+                if(item!=null )
+                {
+                    string cityIfo = "Name: {0}, Age: {1}" + (string)item.id + (string)item.name;
+                    
+                }
+                
+                //Newtonsoft.Json.JsonConvert.SerializeObject(item)
             }
 
             // Console.WriteLine(string.Concat("Hi ", details["FirstName"], " " + details["LastName"]));
@@ -50,6 +59,18 @@ namespace Prudential.WeatherApi.Controllers
 
 
             return null;
+        }
+
+        private void SaveWeatherInformation(Object cityInformation )
+        {
+            Newtonsoft.Json.JsonConvert.SerializeObject(item);
+        }
+
+       private string GetOutputFileLocation()
+        {
+            string outputPath = "D:\\WeatherInformation";//  Convert.ToString(ConfigurationManager.AppSettings["StoragePath"]);
+
+
         }
     }
 }
